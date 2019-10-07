@@ -1,8 +1,9 @@
 <script>
 	import {onMount} from 'svelte'
 
-	import {api} from './api'
+	import {api} from 'app/api'
 	import Catalog from 'lib/catalog/catalog.svelte'
+	import {CatalogEntity} from 'app/entity'
 
 	let catalog = {
 		count: undefined,
@@ -11,7 +12,7 @@
 
 	onMount(async () => {
 		await api.catalog.then(resp => {
-			catalog = resp.data;
+			catalog = new CatalogEntity(resp.data);
 		});
 	});
 </script>

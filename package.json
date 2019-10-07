@@ -11,6 +11,8 @@
     "style-loader": "^0.23.1",
     "svelte": "^3.0.0",
     "svelte-loader": "2.13.3",
+    "ts-loader": "^6.2.0",
+    "typescript": "^3.6.3",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"

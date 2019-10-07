@@ -11,9 +11,10 @@ module.exports = {
 	resolve: {
 		alias: {
 			svelte: path.resolve('node_modules', 'svelte'),
-			lib: path.relative('src','lib'),
+			lib: path.resolve('src', 'lib'),
+			app: path.resolve('src', 'app'),
 		},
-		extensions: ['.mjs', '.js', '.svelte'],
+		extensions: ['.mjs', '.js', '.svelte', '.ts'],
 		mainFields: ['svelte', 'browser', 'module', 'main']
 	},
 	output: {
@@ -40,7 +41,12 @@ module.exports = {
 					{ loader: 'css-loader' },
 					{ loader: 'sass-loader' },
 				]
-			}
+			},
+			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
+			},
 		]
 	},
 	mode,
