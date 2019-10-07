@@ -1,5 +1,7 @@
 <script>
-	export let name;
+	import Catalog from './lib/catalog/catalog.svelte'
 </script>
 
-<h1>Hello {name}!</h1>
+<div class="spa-list-app">
+	<Catalog/>
+</div>

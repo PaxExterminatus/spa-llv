@@ -6,7 +6,7 @@ const prod = mode === 'production';
 
 module.exports = {
 	entry: {
-		bundle: ['./src/main.js']
+		bundle: ['./src/main.js','./src/scss/app.scss'],
 	},
 	resolve: {
 		alias: {
@@ -16,7 +16,7 @@ module.exports = {
 		mainFields: ['svelte', 'browser', 'module', 'main']
 	},
 	output: {
-		path: __dirname + '/public',
+		path: __dirname + '/public/dist',
 		filename: '[name].js',
 		chunkFilename: '[name].[id].js'
 	},
@@ -33,14 +33,11 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.css$/,
+				test: /\.scss$/,
 				use: [
-					/**
-					 * MiniCssExtractPlugin doesn't support HMR.
-					 * For developing, use 'style-loader' instead.
-					 * */
-					prod ? MiniCssExtractPlugin.loader : 'style-loader',
-					'css-loader'
+					{ loader: MiniCssExtractPlugin.loader },
+					{ loader: 'css-loader' },
+					{ loader: 'sass-loader' },
 				]
 			}
 		]
