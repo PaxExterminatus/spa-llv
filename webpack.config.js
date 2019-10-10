@@ -52,9 +52,9 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
 		}),
-		new CopyPlugin([
-			{ from: 'source', to: '../' },
-		]),
+		// new CopyPlugin([
+		// 	{ from: 'source', to: '../' },
+		// ]),
 	],
 	devtool: prod ? false: 'source-map'
 };
