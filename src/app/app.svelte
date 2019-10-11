@@ -1,9 +1,8 @@
 <script>
 	import {onMount} from 'svelte'
-
-	import {api} from 'app/api'
-	import Catalog from 'lib/catalog/catalog.svelte'
-	import {CatalogEntity} from 'app/entity'
+	import {api} from 'app/config/api'
+	import {CatalogEntity} from 'app/entity/CatalogEntity'
+	import Catalog from 'app/component/catalog.svelte'
 
 	let catalog;
 
@@ -16,6 +15,6 @@
 
 <div class="spa-list-app">
 	{#if catalog}
-	<Catalog products={catalog.courses} />
+		<Catalog catalog={catalog} />
 	{/if}
 </div>

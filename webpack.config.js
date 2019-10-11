@@ -6,6 +6,7 @@ const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
 module.exports = {
+	watch: true,
 	entry: {
 		app: ['./src/main.js','./src/scss/app.scss'],
 	},
