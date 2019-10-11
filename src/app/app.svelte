@@ -13,7 +13,7 @@
 	});
 </script>
 
-<div class="spa-list-app">
+<div class="catalog-app">
 	{#if catalog}
 		<Catalog catalog={catalog} />
 	{/if}
