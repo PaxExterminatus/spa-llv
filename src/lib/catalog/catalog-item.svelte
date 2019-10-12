@@ -2,4 +2,4 @@
     export let item = {};
 </script>
 
-<div>{item.id} | {item.name}</div>
+{item.id} | {item.name}

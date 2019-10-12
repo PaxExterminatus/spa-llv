@@ -8,23 +8,19 @@ type CatalogInp = {
 }
 
 export class CourseEntity {
-    constructor(private inp: CourseInp) {
-    }
-
-    get id() {
-        return this.inp.id;
-    }
-
-    get name() {
-        return this.inp.name;
+    readonly id : number;
+    readonly name : string;
+    constructor(inp: CourseInp)
+    {
+        this.id = inp.id;
+        this.name = inp.name;
     }
 }
 
 export class CatalogEntity {
-    constructor(private inp: CatalogInp) {
-    }
-
-    static get itIs() {
-        return this;
+    courses : CourseEntity[];
+    constructor(inp: CatalogInp)
+    {
+        this.courses = inp.courses.map( it => new CourseEntity(it) );
     }
 }
