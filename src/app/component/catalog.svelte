@@ -4,7 +4,7 @@
     export let catalog = {};
 </script>
 
-<CatalogGrid items={catalog.courses} let:item}>
+<CatalogGrid items={catalog.courses} let:item={item}>
     <div slot="item">
         <CatalogItem item="{item}"/>
     </div>
